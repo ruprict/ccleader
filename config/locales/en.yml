@@ -29,5 +29,6 @@ en:
     rank:     Rank
     score:    Score
   labels:
-    delete:   Delete 
-      
+    delete:   Delete
+    edit_help: Double-click a score to edit
+       
