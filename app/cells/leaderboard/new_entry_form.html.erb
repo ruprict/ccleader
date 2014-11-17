@@ -1,0 +1,27 @@
+<%= form_tag controller: 'entries'  do %>
+  <div class="row">
+    <div class="large-8 columns">
+      <div class="row collapse prefix-radius">
+        <div class="small-3 columns">
+          <span class="prefix"><%= t('entries.name') %></span>
+        </div>
+        <div class="small-9 columns">
+          <%= text_field_tag :name, nil, {name: 'entry[name]'}  %>
+        </div>
+      </div>
+    </div>
+    <div class="large-4 columns">
+      <div class="row collapse prefix-radius">
+        <div class="small-3 columns">
+          <span class="prefix"><%= t('entries.score') %></span>
+        </div>
+        <div class="small-7 columns">
+          <%= number_field_tag :score, nil, {name: 'entry[score]'} %>
+        </div>
+        <div class="small-2 columns ">
+          <%= submit_tag 'Add', class: 'button postfix' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+<h1><%= t('leaderboard.subtitle') %></h1>
+<%= render_cell :leaderboard, :new_entry_form %>
+<table style='width: 100%'>
+  <tr>
+    <th><%= t('entries.rank') %></th>
+    <th><%= t('entries.name') %></th>
+    <th><%= t('entries.score') %></th>
+  </tr>
+  <% @entries.each do |entry|  %>
+    <%= render_cell :entry, :show, entry: entry %>
+  <% end %>
+</table>
+
+<%= paginate @page_array %>
+
