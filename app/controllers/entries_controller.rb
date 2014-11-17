@@ -1,16 +1,13 @@
 class EntriesController < ApplicationController
-  DEFAULT_LEADERBOARD = "ccleaders"
+  DEFAULT_LEADERBOARD = 'ccleaders'
 
   def show
     @lb = retrieve_service.execute(name: params[:id])
+    return not_found unless @lb
     respond_to do |format|
       format.html do
-        render 'errors/not_found', status: 404 unless @lb
       end
       format.json do
-        unless @lb
-          render json: { error: "Not Found"}, status: :not_found and return
-        end
         render json: @lb, status: :ok
       end
     end
@@ -23,40 +20,33 @@ class EntriesController < ApplicationController
         redirect_to root_path(page: result[:page])
       end
       format.json do
-        render json: {status: :ok}
+        render json: { status: :ok }
       end
     end
   end
 
   def index
     @entries = retrieve_service.execute(query_options)
+    return not_found if @entries.blank?
     respond_to do |format|
       format.html do
-        render 'errors/not_found', status: 404 if @entries.blank?
       end
       format.json do
-        if @entries.blank?
-          render json: {error: "Not found"}, status: :not_found
-        end
+        render json: @entries
       end
     end
   end
 
   def destroy
     result = delete_service.execute(name: params[:id])
+    return not_found unless result
 
     respond_to do |format|
-      format.html do 
-        unless result
-          redirect_to root_path, status: 404 and return
-        end
+      format.html do
         redirect_to root_path
       end
       format.json do
-        unless result
-          render json: {error: "Not Found"}, status: 404 and return
-        end
-        render json: {status: "ok"}, status: 200
+        render json: { status: 'ok' }, status: 200
       end
     end
   end

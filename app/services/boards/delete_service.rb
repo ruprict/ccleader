@@ -1,9 +1,7 @@
 module Boards
   class DeleteService
-
     def execute(options = {})
       return unless member_exists?(options[:name])
-      puts 'arse'
       leaderboard.remove_member(options[:name])
     end
 
@@ -18,4 +16,3 @@ module Boards
     end
   end
 end
-

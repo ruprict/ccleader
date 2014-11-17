@@ -1,6 +1,6 @@
 module Boards
   DEFAULT_BOARD = 'ccleaders'
-  
+
   def self.default_leaderboard
     Leaderboard.new(
       DEFAULT_BOARD,
@@ -10,7 +10,6 @@ module Boards
   end
 
   def self.default_options
-    puts 'HI'
     Leaderboard::DEFAULT_OPTIONS.merge(
       page_size: 10
     )

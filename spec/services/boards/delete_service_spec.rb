@@ -4,7 +4,7 @@ require 'leaderboard'
 
 module Boards
   describe DeleteService do
-    describe "#execute" do
+    describe '#execute' do
       subject { described_class.new }
 
       let!(:leaderboard) do
@@ -16,14 +16,14 @@ module Boards
           leaderboard.rank_member('Car1', 100)
         end
 
-        it "deletes the entry" do
-          expect {
+        it 'deletes the entry' do
+          expect do
             subject.execute(name: 'Car1')
-          }.to change{ leaderboard.all_leaders.count }.by(-1)
+          end.to change { leaderboard.all_leaders.count }.by(-1)
         end
       end
 
-      context "when the entry does not exist" do
+      context 'when the entry does not exist' do
         it 'returns nil' do
           expect(subject.execute(name: 'Not there')).to be_nil
         end

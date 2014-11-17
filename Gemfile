@@ -58,5 +58,6 @@ group :development, :test do
   gem "spring-commands-rspec"
   gem 'pry-rails'
   gem 'faker'
+  gem 'guard-rubocop'
 end
 
