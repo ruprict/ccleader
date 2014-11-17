@@ -4,7 +4,14 @@ class LeaderboardsController < ApplicationController
   def show
     @lb = Boards.default_leaderboard
     @entries = @lb.leaders(@page, page_size: @limit)
-    @page_array = Kaminari.paginate_array(@entries, total_count: @lb.total_members).page(@page).per(@limit)
+    respond_to do |format|
+      format.html do
+        @page_array = Kaminari.paginate_array(@entries, total_count: @lb.total_members).page(@page).per(@limit)
+      end
+      format.json do
+        render json: @entries
+      end
+    end 
   end
 
   private
