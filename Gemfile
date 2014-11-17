@@ -16,6 +16,8 @@ gem 'cells'
 gem 'bower-rails'
 gem 'quiet_assets'
 
+gem 'rails_12factor'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -41,7 +43,6 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use unicorn as the app server
 gem 'unicorn'
 
 # Use Capistrano for deployment
