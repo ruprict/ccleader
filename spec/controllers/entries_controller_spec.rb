@@ -34,7 +34,6 @@ RSpec.describe EntriesController, type: :controller do
           get :show, id: 'entry', format: :json
           expect(response).to have_http_status(:success)
         end
-
       end
 
       describe 'when the entry is not found' do

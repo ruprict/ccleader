@@ -5,6 +5,7 @@
     <th><%= t('entries.rank') %></th>
     <th><%= t('entries.name') %></th>
     <th><%= t('entries.score') %></th>
+    <th><%= t('labels.delete') %></th>
   </tr>
   <% @entries.each do |entry|  %>
     <%= render_cell :entry, :show, entry: entry %>

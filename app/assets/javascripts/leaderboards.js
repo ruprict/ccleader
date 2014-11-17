@@ -1,3 +1,41 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+var App = angular.module('App', [])
+.directive('entryForm', function (){
+
+  return {
+    restrict: 'E',
+    scope: {
+      entry: '=entry'
+    },
+    templateUrl: '/assets/templates/entry_form.html',
+    link: function(scope, elem, attrs) {
+      var input = elem.find('input'),
+          form = elem.find('form');
+      scope.editing = false;
+
+      elem.bind('dblclick', function(){
+        scope.editing = true;
+        input.select();
+        scope.$apply();
+      });
+
+      input.bind('keydown', function(e) {
+        switch(e.which) {
+          case 13: //Enter
+            form.submit();
+          case 27: //Esc
+            scope.editing = false;
+        }
+        scope.$apply();
+      });
+    }
+  };
+})
+.directive('csrf', function(){
+  return {
+    restrict: 'A',
+    compile: function(tElement, tAttrs, transclude) {
+      var input = $("<input/>", {type: 'hidden', name:'authenticity_token', value: $("meta[name='csrf-token']").attr("content") });
+      tElement.append(input);
+    }
+  };
+});

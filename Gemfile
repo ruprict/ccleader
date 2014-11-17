@@ -59,5 +59,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'faker'
   gem 'guard-rubocop'
+  gem 'simplecov', require: false
 end
 

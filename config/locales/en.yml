@@ -23,9 +23,11 @@ en:
   hello: "Hello world"
 
   leaderboard:
-    subtitle: 'The Best Classic Cars'
+    subtitle: 'Leaders of the Pack'
   entries:
     name:     Name
     rank:     Rank
     score:    Score
+  labels:
+    delete:   Delete 
       

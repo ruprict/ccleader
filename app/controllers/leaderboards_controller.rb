@@ -3,7 +3,7 @@ class LeaderboardsController < ApplicationController
 
   def show
     @lb = Boards.default_leaderboard
-    @entries = @lb.leaders(@page, page_size: @limit)
+    @entries = entry_service.execute(query_options)
     respond_to do |format|
       format.html do
         paginate
@@ -19,6 +19,7 @@ class LeaderboardsController < ApplicationController
   def query_options
     @limit = [params.fetch(:limit, 10).to_i, 100].min
     @page = params.fetch(:page, 1).to_i
+    { page: @page, limit: @limit }
   end
 
   def paginate
@@ -26,6 +27,10 @@ class LeaderboardsController < ApplicationController
       @entries,
       total_count: @lb.total_members)
 
-    pager.page(@page).per(@limit)
+    @page_array = pager.page(@page).per(@limit)
+  end
+
+  def entry_service
+    Boards::GetAllService.new
   end
 end
