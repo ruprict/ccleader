@@ -6,7 +6,7 @@ var App = angular.module('App', [])
     scope: {
       entry: '=entry'
     },
-    templateUrl: '/assets/templates/entry_form.html',
+    templateUrl: "<%=asset_path 'templates/entry_form.html'%>",
     link: function(scope, elem, attrs) {
       var input = elem.find('input'),
           form = elem.find('form');
