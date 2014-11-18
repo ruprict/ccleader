@@ -14,7 +14,6 @@ gem 'kaminari'
 
 gem 'cells'
 gem 'bower-rails'
-gem 'quiet_assets'
 
 gem 'rails_12factor'
 
@@ -61,5 +60,6 @@ group :development, :test do
   gem 'faker'
   gem 'guard-rubocop'
   gem 'simplecov', require: false
+  gem 'quiet_assets'
 end
 
