@@ -20,6 +20,7 @@ Also, I did not allow the ability to create multiple leaderboards. It wasn't spe
 ## Refactorings
 * Controllers: The `respond_to` blocks in the controllers would greatly benefit from something like Wisper.
 * Input validation: The scores are not really validated at this point. 
+* Delete returns to page 1. That's probably not what is desired.
 
 ## Roadmap
 This leaderboard app is VERY simple. For next steps, I'd look at:
