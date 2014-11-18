@@ -14,6 +14,7 @@ gem 'kaminari'
 
 gem 'cells'
 gem 'bower-rails'
+gem 'faker'
 
 gem 'rails_12factor'
 
@@ -57,7 +58,6 @@ group :development, :test do
   gem 'guard-rspec'
   gem "spring-commands-rspec"
   gem 'pry-rails'
-  gem 'faker'
   gem 'guard-rubocop'
   gem 'simplecov', require: false
   gem 'quiet_assets'
