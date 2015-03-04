@@ -1,14 +1,12 @@
 class EntriesController < ApplicationController
-  DEFAULT_LEADERBOARD = 'ccleaders'
-
   def show
-    @lb = retrieve_service.execute(name: params[:id])
-    return not_found unless @lb
+    entry = retrieve_service.execute(name: params[:id])
+    return not_found unless entry
     respond_to do |format|
       format.html do
       end
       format.json do
-        render json: @lb, status: :ok
+        render json: entry, status: :ok
       end
     end
   end
@@ -67,12 +65,5 @@ class EntriesController < ApplicationController
 
   def entry_params
     (params[:entry] || {}).slice(:name, :score)
-  end
-
-  def query_options
-    options = {}
-    options[:limit] = [params.fetch(:limit, 10).to_i, 100].min
-    options[:page] = params.fetch(:page, 1)
-    options
   end
 end

@@ -14,4 +14,10 @@ module Boards
       page_size: 10
     )
   end
+
+  class Base
+    def leaderboard
+      @leaderboard ||= Boards.default_leaderboard
+    end
+  end
 end

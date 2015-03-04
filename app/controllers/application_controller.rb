@@ -2,6 +2,14 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  http_basic_authenticate_with name: Auth::USER, password: Auth::PASSWORD 
+
+  def query_options
+    options = {}
+    options[:limit] = [params.fetch(:limit, 10).to_i, 100].min
+    options[:page] = params.fetch(:page, 1)
+    options
+  end
 
   def not_found
     respond_to do |format|

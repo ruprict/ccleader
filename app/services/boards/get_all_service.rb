@@ -1,8 +1,8 @@
 module Boards
-  class GetAllService
+  class GetAllService < Boards::Base
     def execute(options = {})
       leaderboard.leaders(
-        page(options),
+        page(options).to_i,
         page_size: page_size(options)
       )
     end
@@ -15,10 +15,6 @@ module Boards
 
     def page_size(options)
       options[:page_size] || 10
-    end
-
-    def leaderboard
-      @leaderboard ||= Boards.default_leaderboard
     end
   end
 end

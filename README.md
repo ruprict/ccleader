@@ -8,10 +8,6 @@ For a leaderboard, the persistence store is a pretty simple call. Redis is built
 kind of data, making it very easy to ZADD and ZREVRANGE the members of the board. So, 
 Redis is the only persisitence I am using.
 
-I hope it's not cheating, but I used the `leadeboard` gem. It has a TON of functionality,
-like adding member data, different types of leaderboards, etc. that I thought would
-make future design decisions easier.
-
 ## Design Decisions
 I am a big fan of keeping controllers as small as possible, which often means using service objects to get the business work done. I did that here, which allowed me to write easy specs for the business logic, etc. It would also allow us to move the important bits to other apps, gemify it, etc. 
 
