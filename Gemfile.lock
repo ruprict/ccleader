@@ -96,6 +96,7 @@ GEM
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
+    logglier (0.2.11)
     lumberjack (1.0.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
@@ -242,6 +243,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   leaderboard
+  logglier
   pg
   pry-rails
   quiet_assets

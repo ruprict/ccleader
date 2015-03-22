@@ -3,3 +3,4 @@
 
 # asset 'bootstrap'
 asset 'angular'
+asset 'angular-loggly'

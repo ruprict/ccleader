@@ -1,6 +1,8 @@
-var App = angular.module('App', [])
-.directive('entryForm', function (){
-
+var App = angular.module('App', ['loggly'])
+.run(function(loggly) {
+    loggly.setApiKey('3e8f8c6f-2161-4544-8c04-bc134ac82590');
+})
+.directive('entryForm', function (loggly){
   return {
     restrict: 'E',
     scope: {
@@ -13,6 +15,7 @@ var App = angular.module('App', [])
       scope.editing = false;
 
       elem.bind('dblclick', function(){
+        loggly.info("Editing started");
         scope.editing = true;
         input.select();
         scope.$apply();
@@ -23,6 +26,7 @@ var App = angular.module('App', [])
           case 13: //Enter
             form.submit();
           case 27: //Esc
+            loggly.info("Editing Cancelled")
             scope.editing = false;
         }
         scope.$apply();

@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require angular/angular
+//= require angular-loggly/logglyService.min
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
