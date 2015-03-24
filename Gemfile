@@ -9,6 +9,7 @@ gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 
 gem 'foundation-rails' 
+gem 'ngannotate-rails'
 
 gem 'logglier'
 
