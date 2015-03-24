@@ -1,8 +1,8 @@
 var App = angular.module('App', ['loggly'])
-.run(function(loggly) {
+.run(["loggly", function(loggly) {
     loggly.setApiKey('3e8f8c6f-2161-4544-8c04-bc134ac82590');
-})
-.directive('entryForm', function (loggly){
+}])
+.directive('entryForm', ['loggly', function (loggly){
   return {
     restrict: 'E',
     scope: {
@@ -33,7 +33,7 @@ var App = angular.module('App', ['loggly'])
       });
     }
   };
-})
+}])
 .directive('csrf', function(){
   return {
     restrict: 'A',

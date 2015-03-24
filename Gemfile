@@ -8,7 +8,7 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 
-gem 'foundation-rails' 
+gem 'foundation-rails', '5.4.3.1'
 gem 'ngannotate-rails'
 
 gem 'logglier'
