@@ -1,0 +1,13 @@
+web: 
+  build: .
+  links:
+    - db
+    - redis
+  ports:
+    - "3000:3000"
+db:
+  image: postgres
+redis:
+  image: redis
+
+

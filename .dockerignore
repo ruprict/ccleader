@@ -1,0 +1,7 @@
+README
+.git/
+tmp/
+logs/
+.ruby-gemset
+.ruby-version
+*.sw*
