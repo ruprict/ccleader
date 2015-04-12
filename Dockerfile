@@ -5,9 +5,9 @@ MAINTAINER glenn.goodrich@gmail.com
 RUN mkdir /app
 WORKDIR /app
 
-EXPOSE 3000
+EXPOSE 5000
 
-CMD ["rails", "s"]
+CMD ["foreman", "start"]
 
 # Install the necessary gems, remember ADD is not cache
 # Friendly 

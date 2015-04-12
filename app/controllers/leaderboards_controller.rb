@@ -2,6 +2,7 @@ class LeaderboardsController < ApplicationController
   before_action :query_options
 
   def show
+    Rails.logger.info("Showing a leaderboard")
     @lb = Boards.default_leaderboard
     @entries = entry_service.execute(query_options)
     respond_to do |format|

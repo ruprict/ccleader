@@ -63,7 +63,7 @@ GEM
     foreman (0.78.0)
       thor (~> 0.19.1)
     formatador (0.2.5)
-    foundation-rails (5.4.5.0)
+    foundation-rails (5.4.3.1)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
     guard (2.8.2)
@@ -98,6 +98,7 @@ GEM
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
+    logglier (0.2.11)
     lumberjack (1.0.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
@@ -106,6 +107,9 @@ GEM
     mini_portile (0.6.1)
     minitest (5.4.3)
     multi_json (1.10.1)
+    ngannotate-rails (0.15.4)
+      execjs
+      rails (>= 3.1)
     nokogiri (1.6.4.1)
       mini_portile (~> 0.6.0)
     parser (2.2.0.pre.7)
@@ -237,7 +241,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   faker
   foreman
-  foundation-rails
+  foundation-rails (= 5.4.3.1)
   guard
   guard-rspec
   guard-rubocop
@@ -245,6 +249,8 @@ DEPENDENCIES
   jquery-rails
   kaminari
   leaderboard
+  logglier
+  ngannotate-rails
   pg
   pry-rails
   quiet_assets

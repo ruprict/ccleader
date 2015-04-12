@@ -1,0 +1,29 @@
+{
+  "name": "angular-loggly",
+  "version": "1.1.0",
+  "homepage": "https://github.com/GoAugust/angular-loggly",
+  "authors": [
+    "Rudolf Olah <omouse@gmail.com>"
+  ],
+  "description": "AngularJS loggly service, can be used standalone or as a replacement for $log service.",
+  "main": "logglyService.js",
+  "keywords": [
+    "angularjs",
+    "loggly",
+    "angular",
+    "logging",
+    "log",
+    "debugging"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.16"
+  }
+}
