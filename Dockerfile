@@ -2,6 +2,8 @@ FROM ruby:2.2.1
 
 MAINTAINER glenn.goodrich@gmail.com
 
+RUN apt-get update && apt-get install -y nodejs --no-install-recommends
+
 RUN mkdir /app
 WORKDIR /app
 

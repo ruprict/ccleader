@@ -107,9 +107,6 @@ GEM
     mini_portile (0.6.1)
     minitest (5.4.3)
     multi_json (1.10.1)
-    ngannotate-rails (0.15.4)
-      execjs
-      rails (>= 3.1)
     nokogiri (1.6.4.1)
       mini_portile (~> 0.6.0)
     parser (2.2.0.pre.7)
@@ -241,7 +238,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   faker
   foreman
-  foundation-rails (= 5.4.3.1)
+  foundation-rails
   guard
   guard-rspec
   guard-rubocop
@@ -250,7 +247,6 @@ DEPENDENCIES
   kaminari
   leaderboard
   logglier
-  ngannotate-rails
   pg
   pry-rails
   quiet_assets

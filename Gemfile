@@ -8,10 +8,7 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 
-gem 'foundation-rails', '5.4.3.1'
-gem 'ngannotate-rails'
-
-gem 'logglier'
+gem 'foundation-rails' 
 
 gem 'kaminari'
 
@@ -27,8 +24,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
+# gg
 #
 
+gem 'logglier'
 gem 'leaderboard'
 
 # Use jquery as the JavaScript library
